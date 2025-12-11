@@ -26,7 +26,7 @@ namespace Banking_System_Application.com.bank.controller
             email = registerEmail();
             user = new User(username, password, fullName[0], fullName[1], phoneNumber, address, email);
             BankRegistrationModel.saveNewUser(user);
-
+            BankUserProfileView.showWelcome(user);
         }
 
         public static String registerUsername()
