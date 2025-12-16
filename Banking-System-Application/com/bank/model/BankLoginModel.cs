@@ -1,41 +1,45 @@
 ﻿//using System;
 //using System.Collections.Generic;
 //using System.Data.SqlClient;
-//using System.Data;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-//namespace Banking_System_Application.com.bank.model
-//{
-//    public class BankLoginModel
-//    {
-//        public static String getPasswordOf(String username)
-//        {
-//            String password = null;
+namespace Banking_System_Application.com.bank.model
+{
+    public class BankLoginModel
+    {
+        public static User getUsername(string username, string password)
+        {
 
-//            //try
-//            //{
-//                using (SqlConnection connection = new SqlConnection(BankUtil.ConnectionString))
-//                {
-//                    connection.Open();
+            //try
+            //{
+            using (SqlConnection connection = new SqlConnection(BankUtil.ConnectionString))
+            {
+                connection.Open();
 
-//                    using(SqlCommand command = new SqlCommand("getUserPassword", connection))
-//                    {
-//                        command.CommandType = CommandType.StoredProcedure;
-//                        command.Parameters.AddWithValue("@username", username);
+                using (SqlCommand command = new SqlCommand("getUserByPassword1", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password);
 
-//                        using(SqlDataReader reader = command.ExecuteReader())
-//                        {
-//                            if(reader.Read())
-//                            {
-//                                password = reader["password"].ToString();
-//                            }
-//                        }
-//                    }
-//                }
-//            //}
-//            return password;
-//        }
-//    }
-//}
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new User
+                            {
+                                Username = reader["Username"].ToString()
+                            };
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+    }
+}

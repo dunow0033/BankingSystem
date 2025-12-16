@@ -43,9 +43,11 @@ namespace Banking_System_Application.com.bank.controller
             switch(option)
             {
                 case 1:
+                    Console.Clear();
                     BankLogin.Run();
                     break;
                 case 2:
+                    Console.Clear();
                     BankRegistration.Run();
                     break;
                 case 3:

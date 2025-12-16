@@ -136,3 +136,4 @@ C:\Users\PC\source\repos\Banking-System-Application\Banking-System-Application\o
 C:\Users\PC\source\repos\Banking-System-Application\Banking-System-Application\obj\Debug\net8.0\Banking-System-Application.pdb
 C:\Users\PC\source\repos\Banking-System-Application\Banking-System-Application\obj\Debug\net8.0\Banking-System-Application.genruntimeconfig.cache
 C:\Users\PC\source\repos\Banking-System-Application\Banking-System-Application\obj\Debug\net8.0\ref\Banking-System-Application.dll
+C:\Users\PC\source\repos\Banking-System-Application\Banking-System-Application\obj\Debug\net8.0\Banking-System-Application.sourcelink.json

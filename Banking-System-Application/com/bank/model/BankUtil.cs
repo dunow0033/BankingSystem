@@ -114,6 +114,11 @@ namespace Banking_System_Application.com.bank.model
             Console.WriteLine("Enter function number from the list: ");
         }
 
+        public static void showTakeSelectionNumber()
+        {
+            Console.WriteLine("Enter selection number from the list: ");
+        }
+
         public static string ConnectionString = @"Server=.;Integrated Security=true;Database=BankingSystem;Trusted_Connection=True;TrustServerCertificate=True;";
     }
 }

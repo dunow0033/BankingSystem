@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Banking_System_Application.com.bank.view;
+using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -78,7 +79,9 @@ namespace Banking_System_Application.com.bank.model
                     Console.WriteLine("There was an error");
                 }
 
-                Console.ReadKey();
+            Thread.Sleep(3000);
+
+                //Console.ReadKey();
             //}
         }
     }

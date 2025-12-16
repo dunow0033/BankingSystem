@@ -1,4 +1,5 @@
-﻿using Banking_System_Application.com.bank.view;
+﻿using Banking_System_Application.com.bank.model;
+using Banking_System_Application.com.bank.view;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,21 +18,22 @@ namespace Banking_System_Application.com.bank.controller
             String[] credentials = BankLoginView.displayLoginWindow();
             String username = credentials[0];
             String password = credentials[1];
-            //checkLogin(username, password);
+            checkLogin(username, password);
         }
 
-        //private static void checkLogin(String username, String password)
-        //{
-        //    String resultPassword = BankLoginModel.getPasswordOf(username);
-        //    if(resultPassword == null || !resultPassword.Equals(password))
-        //    {
-        //        BankLoginView.showWrongPassword();
-        //    } else
-        //    {
-        //        //User user = Bank
-        //        BankUserProfile.Run(user);
-        //    }
-        //}
+        private static void checkLogin(String username, String password)
+        {
+            User user = BankLoginModel.getUsername(username, password);
+            if (user == null)
+            {
+                BankLoginView.showWrongPassword();
+            }
+            else
+            {
+                //User user = Bank
+                BankUserProfile.Run(user);
+            }
+        }
 
     }
 }
