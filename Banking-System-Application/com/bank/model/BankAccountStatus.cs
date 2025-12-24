@@ -25,7 +25,7 @@ namespace Banking_System_Application.com.bank.model
             this.name = name;
         }
 
-        public static BankAccountStatus TypeInIndex(int index)
+        public static BankAccountStatus typeInIndex(int index)
         {
             return (BankAccountStatus)index;
         }

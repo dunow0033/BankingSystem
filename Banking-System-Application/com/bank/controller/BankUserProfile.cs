@@ -38,7 +38,8 @@ namespace Banking_System_Application.com.bank.controller
                         break;
                     case "3":
                         Console.WriteLine("Bank Open Account");
-                        //BankOpenAccount.Run(user);
+                        Thread.Sleep(1000);
+                        BankOpenAccount.Run(user);
                         break;
                     case "4":
                         Console.WriteLine("Bank Logs");

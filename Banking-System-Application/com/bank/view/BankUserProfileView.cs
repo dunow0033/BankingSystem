@@ -31,35 +31,33 @@ namespace Banking_System_Application.com.bank.view
             BankUtil.createHeader("Welcome, " + user.FirstName + " " + user.LastName);
             showProfileFunctions();
             //string answer = Console.ReadLine();
-            string selection; 
-            selection = Console.ReadLine().Trim();
+            //string selection; 
+            //selection = Console.ReadLine().Trim();
 
-            switch (selection)
-            {
-                case "1":
-                    Console.Clear();
-                    Console.WriteLine("Change my profile information");
-                    BankModifyProfile.Run(user);
-                    break;
-                case "2":
-                    Console.Clear();
-                    Console.WriteLine("View my bank accounts");
-                    //BankViewAccounts.Run(user);
-                    break;
-                case "3":
-                    Console.WriteLine("Open new bank account");
-                    //BankOpenAccount.Run(user);
-                    break;
-                case "4":
-                    Console.WriteLine("View my log");
-                    break;
-                case "5":
-                    Console.WriteLine("Log out");
-                    break;
-                default:
-                    Console.WriteLine("Error");
-                    break;
-            }
+            //switch (selection)
+            //{
+            //    case "1":
+            //        Console.WriteLine("Change my profile information");
+            //        BankModifyProfile.Run(user);
+            //        break;
+            //    case "2":
+            //        Console.WriteLine("View my bank accounts");
+            //        BankViewAccounts.Run(user);
+            //        break;
+            //    case "3":
+            //        Console.WriteLine("Open new bank account");
+            //        BankOpenAccount.Run(user);
+            //        break;
+            //    case "4":
+            //        Console.WriteLine("View my log");
+            //        break;
+            //    case "5":
+            //        Console.WriteLine("Log out");
+            //        break;
+            //    default:
+            //        Console.WriteLine("Error");
+            //        break;
+            //}
         }
 
         public static String takeChoice()

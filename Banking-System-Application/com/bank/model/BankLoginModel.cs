@@ -20,7 +20,7 @@ namespace Banking_System_Application.com.bank.model
             {
                 connection.Open();
 
-                using (SqlCommand command = new SqlCommand("getUserByPassword1", connection))
+                using (SqlCommand command = new SqlCommand("getUserByPassword", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@Username", username);

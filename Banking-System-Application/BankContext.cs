@@ -18,6 +18,8 @@ namespace Banking_System_Application
 
         public DbSet<User> users { get; set; }
 
+        public DbSet<UserBankAccount> userBankAccounts { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=.;Integrated Security=true;Database=BankingSystem;Trusted_Connection=True;TrustServerCertificate=True;");

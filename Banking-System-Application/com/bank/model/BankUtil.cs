@@ -16,7 +16,7 @@ namespace Banking_System_Application.com.bank.model
 
         public static void createMessage(String paragraph)
         {
-            int width = 200;
+            int width = 100;
             int part = (width /2) - (paragraph.Length / 2);
             String bothSides = new string('-', part);
             String spaceArea = new string(' ', 3);
@@ -93,7 +93,7 @@ namespace Banking_System_Application.com.bank.model
 
         public static void createHeader(String paragraph)
         {
-            int width = 200;
+            int width = 100;
             int part = (width / 2) - (paragraph.Count() / 2);
             String rightSide = new string('<', part);
             String leftSide = new string('>', part);
