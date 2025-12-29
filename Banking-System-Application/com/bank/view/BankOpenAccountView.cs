@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Banking_System_Application.com.bank.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,22 @@ namespace Banking_System_Application.com.bank.view
 {
     public class BankOpenAccountView
     {
-        public static String takeNickname()
+        public static String takeNickname(User user)
         {
+            bool isUniqueName;
+            string Name = "";
+
             Console.WriteLine("Enter the bank account nickname: ");
-            return Console.ReadLine();
+
+            Name = Console.ReadLine();
+
+            while(!BankOpenAccountModel.checkUniqueNickname(user, Name))
+            {
+                Console.WriteLine("That nickname already exists, please try again: ");
+                Name = Console.ReadLine();
+            }
+
+            return Name;
         }
 
         public static String takeType()

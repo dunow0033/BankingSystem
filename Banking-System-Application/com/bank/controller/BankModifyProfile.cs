@@ -15,6 +15,8 @@ namespace Banking_System_Application.com.bank.controller
 
         public static void Run(User user)
         {
+            Console.Clear();
+            Console.WriteLine("Modify Bank Profile");
             BankModifyProfileView.showChangeOptions();
             takeChangeOption(user);
         }
@@ -40,13 +42,9 @@ namespace Banking_System_Application.com.bank.controller
                     changeUsername(user);
                     break;
                 case 3:
-                    Console.WriteLine("Change phone number");
-                    Thread.Sleep(3000);
                     changePhoneNumber(user);
                     break;
                 case 4:
-                    Console.WriteLine("Change address");
-                    Thread.Sleep(3000);
                     changeAddress(user);
                     break;
                 case 5:
@@ -95,6 +93,7 @@ namespace Banking_System_Application.com.bank.controller
         {
             Console.Clear();
             Console.WriteLine("Change Address\n\n");
+            Thread.Sleep(3000);
 
             string address;
 
@@ -109,7 +108,7 @@ namespace Banking_System_Application.com.bank.controller
         private static void changePhoneNumber(User user)
         {
             Console.Clear();
-            Console.WriteLine("Change Phone Number\n\n");
+            Console.WriteLine("Change phone number\n\n");
 
             string phoneNumber;
 

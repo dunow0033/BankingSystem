@@ -16,12 +16,14 @@ namespace Banking_System_Application.com.bank.controller
 
         public static void Run(User user)
         {
+            Console.Clear();
+            Console.WriteLine("Bank Open Account\n\n");
             UserBankAccount newAccount;
             int typeID, statusID, balance;
             int? currencyID;
             string nickName;
             BankAccountType bankAccountType;
-            nickName = takeAccountNickname();
+            nickName = takeAccountNickname(user);
             BankAccountTypeInfo bankAccountTypeInfo;
             Currency currencyType;
             BankAccountStatus bankAccountStatusType;
@@ -42,13 +44,13 @@ namespace Banking_System_Application.com.bank.controller
             BankOpenAccountModel.saveNewAccount(user, newAccount);
         }
 
-        private static string takeAccountNickname()
+        private static string takeAccountNickname(User user)
         {
             String nickname;
             
             do
             {
-                nickname = BankOpenAccountView.takeNickname();
+                nickname = BankOpenAccountView.takeNickname(user);
             } while (!Regex.IsMatch(nickname, "^[A-Za-z][A-Za-z0-9]{0,49}$"));
 
             return nickname;

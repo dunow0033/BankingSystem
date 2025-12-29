@@ -27,18 +27,12 @@ namespace Banking_System_Application.com.bank.controller
                 switch (choice)
                 {
                     case "1":
-                        Console.WriteLine("Modify Bank Profile");
-                        Thread.Sleep(1000);
                         BankModifyProfile.Run(user);
                         break;
                     case "2":
-                        Console.WriteLine("View Bank Accounts");
-                        Thread.Sleep(1000);
                         BankViewAccounts.Run(user);
                         break;
                     case "3":
-                        Console.WriteLine("Bank Open Account");
-                        Thread.Sleep(1000);
                         BankOpenAccount.Run(user);
                         break;
                     case "4":

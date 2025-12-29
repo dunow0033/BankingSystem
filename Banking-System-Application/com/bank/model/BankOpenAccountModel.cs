@@ -12,7 +12,7 @@ namespace Banking_System_Application.com.bank.model
     {
         public static void saveNewAccount(User user, UserBankAccount newAccount)
         {
-            
+
             //try
             //{
             using (SqlConnection connection = new SqlConnection(BankUtil.ConnectionString))
@@ -22,7 +22,7 @@ namespace Banking_System_Application.com.bank.model
                 //Console.WriteLine($"DEBUG: newAccount.status = {newAccount.status} ({(int)newAccount.status})");
 
                 //Thread.Sleep(8000);
-               
+
 
                 using (SqlCommand command = new SqlCommand("saveNewAccount", connection))
                 {
@@ -40,6 +40,35 @@ namespace Banking_System_Application.com.bank.model
             }
 
             //return null;
+        }
+
+        public static bool checkUniqueNickname(User user, String nickname)
+        {
+            using (SqlConnection connection = new SqlConnection(BankUtil.ConnectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("checkUniqueNickname", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@Username", user.Username);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string existingNickname = reader.GetString(reader.GetOrdinal("Nickname"));
+
+                            if (existingNickname.Equals(nickname, StringComparison.OrdinalIgnoreCase))
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return true;
         }
     }
 }

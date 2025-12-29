@@ -12,6 +12,7 @@ namespace Banking_System_Application.com.bank.view
     {
         public static void showChangeOptions()
         {
+            Console.WriteLine("Modify Bank Profile");
             BankUtil.createHeader("Change profile info list");
             BankUtil.createOrderedList(new string[]{
                 "Change password",
